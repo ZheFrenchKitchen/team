@@ -5,12 +5,24 @@
 
 # Create git repository, the remote and push
 git init  .
+###########################
+# Go on github , create a repository 
+###########################
+
+# add repo
 git remote add origin your_repo.git 
 # The files in your dir are tracked only. 
 git add .
 # Files are committed, means any changes will be followed now.
 git commit -m "First commit"
-git push origin
+
+# enable
+git config --global https.proxy https://proxy.company.com:8888
+# disable
+git config --global --unset-all http.proxy
+
+git branch -M main
+git push -u origin -M main
 
 #List the files and their states.
 
