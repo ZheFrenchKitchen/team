@@ -339,4 +339,11 @@ ssh -N -f -L 8888:localhost:3980 villemin@compute0
 
 # Now you can access to you remote files in your browser using : 
 http://localhost:8888
-``
+```
+
+#### apt-get behind no proxy
+
+```shell
+sudo apt-get -o Acquire::http::proxy=false <update/install> 
+
+```
