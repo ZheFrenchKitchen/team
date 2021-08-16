@@ -76,4 +76,8 @@ git tag -d  v.1.4
 # if you want to remove remotely
 git push origin :refs/tags/v.1.4
 
+# for the new token thing, I add to do some stuffs for git to ask me the new token 
+https://stackoverflow.com/questions/68775869/support-for-password-authentication-was-removed-please-use-a-personal-access-to
+git config --global credential.helper cache
+
 ```
