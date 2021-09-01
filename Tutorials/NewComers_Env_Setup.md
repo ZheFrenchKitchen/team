@@ -326,11 +326,26 @@ conda env config vars set R_LIBS=/data/USERS/villemin/anaconda3/envs/r4.1/lib/R/
 
 First (in fact, update is useless) :
 
-conda update -n base conda
+conda update -n base conda (do nothing...)
 
 conda-forge r-base should install 4.1.1 but it puts 4.0.5 so to correct this bug use what follows.
 
-conda install -c conda-forge cross-r-base
+# I tried to upgrade my version of conda 4.9.2 to 4.10.3
+conda activate base
+conda update --all
+conda update -n base conda 
+
+Collecting package metadata (current_repodata.json): failed
+
+ProxyError: Conda cannot proceed due to an error in your proxy configuration.
+Check for typos and other configuration errors in any '.netrc' file in your home directory,
+any environment variables ending in '_PROXY', and any other system-wide proxy
+configuration settings.
+
+export http_proxy=http://proxywsg.crlc.intra:3128
+export https_proxy=http://proxywsg.crlc.intra:3128
+
+conda update -n base conda
 
 ```
 
