@@ -295,7 +295,8 @@ git config --global http.proxy http://proxywsg.crlc.intra:3128
 
 It's boring when you switch from home to office because each time you need to reconfigure the proxy settings.
 
-#### R version 4
+#### R version 4 R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+
 
 You need to set up some environements variable attached to your conda env. 
 
@@ -310,11 +311,23 @@ conda env config vars set R_LIBS=/data/USERS/villemin/anaconda3/envs/r4-base/lib
 # This one will install r.4
  conda install -c conda-forge r-base
 
-# For example, in another env, to avoid conflict
+#### R version 4.1 R version 4.0.5 (2021-03-31) -- "Shake and Throw"
 
-conda activate Pit-3.7.7
-conda env config vars set R_LIBS_USER=/data/USERS/villemin/anaconda3/envs/Pit-3.7.7/lib/R/library
-conda env config vars set R_LIBS=/data/USERS/villemin/anaconda3/envs/Pit-3.7.7/lib/R/library
+
+You need to set up some environements variable attached to your conda env. 
+
+```shell
+conda create --name r4.1
+conda env config vars set R_LIBS_USER=/data/USERS/villemin/anaconda3/envs/r4.1/lib/R/library
+conda env config vars set R_LIBS=/data/USERS/villemin/anaconda3/envs/r4.1/lib/R/library
+
+# Seurat package hd5fr
+ conda env config vars set  HDF5_USE_FILE_LOCKING='FALSE'
+
+# This one will now install 4.0.5 
+ conda install -c conda-forge r-base
+
+
 ```
 #### Remote Jupiter Lab
 
