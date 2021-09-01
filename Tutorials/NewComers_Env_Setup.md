@@ -311,12 +311,12 @@ conda env config vars set R_LIBS=/data/USERS/villemin/anaconda3/envs/r4-base/lib
 # This one will install r.4
  conda install -c conda-forge r-base
 
-#### R version 4.1 R version 4.0.5 (2021-03-31) -- "Shake and Throw"
-
+#### R version 4.1
 
 You need to set up some environements variable attached to your conda env. 
 
 ```shell
+
 conda create --name r4.1
 conda env config vars set R_LIBS_USER=/data/USERS/villemin/anaconda3/envs/r4.1/lib/R/library
 conda env config vars set R_LIBS=/data/USERS/villemin/anaconda3/envs/r4.1/lib/R/library
@@ -324,11 +324,16 @@ conda env config vars set R_LIBS=/data/USERS/villemin/anaconda3/envs/r4.1/lib/R/
 # Seurat package hd5fr
  conda env config vars set  HDF5_USE_FILE_LOCKING='FALSE'
 
-# This one will now install 4.0.5 
- conda install -c conda-forge r-base
+First (in fact, update is useless) :
 
+conda update -n base conda
+
+conda-forge r-base should install 4.1.1 but it puts 4.0.5 so to correct this bug use what follows.
+
+conda install -c conda-forge cross-r-base
 
 ```
+
 #### Remote Jupiter Lab
 
 ```shell
